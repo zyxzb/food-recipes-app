@@ -1,0 +1,58 @@
+.section.section-1 {
+    margin-bottom: 50px;
+
+    .col {
+        max-height: 50vh;
+        width: 50%;
+
+        &.pr {
+            padding-right: 5vw;
+
+        }
+
+        img {
+            max-width: 90%;
+            border-radius: 15px;
+
+            @media (max-width: 768px) {
+                border-radius: 8px;
+                max-width: 100%;
+            }
+        }
+
+        .info.item {
+            margin-bottom: 0.8em;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 0.7em;
+            border-radius: 4px;
+            font-weight: bold;
+            transform: translateX(100%);
+            opacity: 0;
+            animation: getAnimationDuration(0.3s) slideInRight forwards;
+
+            &:nth-child(2) {
+                animation-delay: 0.15s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 0.45s;
+            }
+
+            &:nth-child(5) {
+                animation-delay: 0.6s;
+            }
+
+            &:nth-child(6) {
+                animation-delay: 0.75s;
+            }
+        }
+    }
+
+    .btn-main {
+        margin-top: 0.5em;
+    }
+}
