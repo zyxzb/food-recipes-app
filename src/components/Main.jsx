@@ -4,6 +4,7 @@ import Section1 from './Section1';
 import QuoteSection from './QuoteSection';
 import ChiefsSection from './ChiefsSection';
 
+
 const Main = () => {
 
     const images = [
@@ -28,8 +29,8 @@ const Main = () => {
                     <button className='btn-main'>Button</button>
                 </div>
                 <div className="col gallery">
-                    {images.map(img => (
-                        <CustomImages imgSrc={img} />
+                    {images.map((img, index) => (
+                        <CustomImages imgSrc={img} key={index} />
                     ))}
                 </div>
             </div>
@@ -42,7 +43,6 @@ const Main = () => {
             <div className="section chiefs">
                 <ChiefsSection/>
             </div>
-            
         </div>
     );
 }

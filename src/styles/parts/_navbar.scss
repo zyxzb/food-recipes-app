@@ -133,6 +133,7 @@
     width: 42vw;
     box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.2), 12px 0px 13px 3px rgba(0, 0, 0, 0.1);
     animation: getAnimationDuration(0.3s) slideInLeft ease-in-out;
+    z-index: 2;
 
 
     .sidebar-link {

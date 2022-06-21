@@ -1,3 +1,4 @@
+import { Link, useLocation } from 'react-router-dom';
 import React, {useState} from 'react';
 import Sidebar from './Sidebar';
 import { faHome, faList, faCog } from '@fortawesome/free-solid-svg-icons'
@@ -5,6 +6,7 @@ import { faHome, faList, faCog } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
     const handleOnClick = () =>{
         setIsOpen(!isOpen)        
@@ -37,18 +39,19 @@ const Navbar = () => {
             <a href='#!' className='logo'>FoodRecipes</a>
             <div className="nav-links">
                 {links.map(link => (
-                    <a href='#!' key={link.path}>{link.name}</a>
+                    <Link to={link.path}
+                      href='#!' 
+                      className={location.pathname === link.path ? 'nav-links active' : 'nav-links'}
+                      key={link.path}>
+                        {link.name}
+                    </Link>
                 ))}
-                {/* <a href="#!">Home</a>
-                <a href="#!">About</a>
-                <a href="#!">Recipes</a> */}
             </div>
             <div onClick={handleOnClick} className={isOpen ? 'sidebar-btn open' : 'sidebar-btn'} >
                 <div className='btn'></div>
             </div>
         </div>
-        { isOpen && <Sidebar closeSidebar={closeSidebar} links={links}/>}
-
+        {isOpen && <Sidebar closeSidebar={closeSidebar} links={links}/>}
         </>
     );
 }
