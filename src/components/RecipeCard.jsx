@@ -1,13 +1,19 @@
 import React from 'react';
 import CustomImages from './CustomImages';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
-const RecipeCard = () => {
+
+const RecipeCard = ({recipe}) => {
+
+    const {toggle} = useContext(ThemeContext);
+
     return (
-        <div className='recipe-card'>
-            <CustomImages imgSrc='/img/gallery/img_1.jpg' />
+        <div className={toggle ? 'recipe-card dark' : 'recipe-card'}>
+            <CustomImages imgSrc={recipe.image} />
             <div className="recipe-card-info">
-                <img className='author-img' src='/img/top-chiefs/img_1.jpg' alt="" />
-                <p className='recipe-title'> Chicken Pan Pizza</p>
+                <img className='author-img' src={recipe.authorImg} alt="" />
+                <p className={toggle ? 'recipe-title dark' : 'recipe-title'}>{recipe.title}</p>
                 <p className='recipe-desc'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                 <a className='view-btn' href="#!">VIEW RECIPE</a>
                

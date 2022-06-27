@@ -1,15 +1,33 @@
 import { Link, useLocation } from 'react-router-dom';
 import React, {useState} from 'react';
 import Sidebar from './Sidebar';
-import { faHome, faList, faCog } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faList, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 const Navbar = () => {
+
     const [isOpen, setIsOpen] = useState(false);
+    const [isNightMode, setIsNightMode] = useState(false);
+    const {toggle, toggleFunction} = useContext(ThemeContext);
+    
     const location = useLocation();
 
-    const handleOnClick = () =>{
-        setIsOpen(!isOpen)        
+    // const handleOnClick = () =>{
+    //     setIsOpen(!isOpen)        
+    // }
+
+    const setThemeMode = () => {
+         
+        setIsNightMode(!isNightMode);
+        toggleFunction()
+        
+
+        // !nightMode ? document.documentElement.style.setProperty('--background-color', '#0A0A0A') : document.documentElement.style.setProperty('--background-color', '#fff')
+
     }
 
     const links = [
@@ -22,21 +40,20 @@ const Navbar = () => {
         name: 'Recipes',
         path: '/recipes',
         icon: faList,
-    },
-    {
-        name: 'Settings',
-        path: '/settings',
-        icon: faCog,
     }]
 
     const closeSidebar = () => {
         setIsOpen(false)
     }
 
+   
     return (
         <>
-        <div className='navbar container'>
-            <a href='#!' className='logo'>FoodRecipes</a>
+        <div className={toggle ?  'navbar container dark' : 'navbar container'}
+
+        // style={toggle ? {backgroundColor: "#0A0A0A"} : {}}
+        >
+            <Link to='/' href='#!' className='logo'>FoodRecipes</Link>
             <div className="nav-links">
                 {links.map(link => (
                     <Link to={link.path}
@@ -47,7 +64,14 @@ const Navbar = () => {
                     </Link>
                 ))}
             </div>
-            <div onClick={handleOnClick} className={isOpen ? 'sidebar-btn open' : 'sidebar-btn'} >
+            <div className='theme-mode' onClick={setThemeMode}>
+                {isNightMode ? 
+                <FontAwesomeIcon icon={faMoon}/> 
+                : 
+                <FontAwesomeIcon icon={faSun}/>}
+            </div>
+           
+            <div onClick={() => setIsOpen(!isOpen)} className={isOpen ? 'sidebar-btn open' : 'sidebar-btn'} >
                 <div className='btn'></div>
             </div>
         </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const ChiefsSection = () => {
 
@@ -41,21 +43,33 @@ const ChiefsSection = () => {
             recipes: "10",
             cuisine: "Mexican",
          },
-    ]
+    ];
+
+    const {toggle} = useContext(ThemeContext);
 
     return (
         <>
-            <h2 className='title'>Chiefs Sections</h2>
+            <h2 className={ toggle ? 'title dark' : 'title'}>Chiefs Sections</h2>
             <div className='top-chiefs-container'>
                 {chiefs.map((chief, index) => (
-                   <div className='chief-card'key={index} >
+                   <div className={toggle ? 'chief-card dark' : 'chief-card'}key={index} >
                     <div className='chief-card-image'>
                         <img src={chief.img} alt=""/>
                     </div>
                     <div className="chief-card-info">
-                        <h3 className='chief-card-info-name'>{chief.name}</h3>
-                        <p className='chief-card-info-desctription'>Recipes: <b>{chief.recipes} </b></p>
-                        <p className='chief-card-info-desctription'>Cuisine: <b>{chief.cuisine}</b></p>
+                        <h3 className={toggle ? 
+                            'chief-card-info-name dark' : 
+                            'chief-card-info-name'}>
+                                {chief.name}
+                            </h3>
+                        <p className={toggle ? 
+                            'chief-card-info-desctription dark' : 'chief-card-info-desctription'}>
+                                Recipes: <b>{chief.recipes} </b>
+                                </p>
+                        <p className={toggle ?'chief-card-info-desctription dark' :
+                        'chief-card-info-desctription'}>
+                                Cuisine: <b>{chief.cuisine}</b>
+                            </p>
                         <p className='chief-icons'>
                         <FontAwesomeIcon className='buzz' icon={faFacebook}/>
                         <FontAwesomeIcon className='buzz' icon={faTwitter}/>

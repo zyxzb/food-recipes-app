@@ -54,5 +54,9 @@
 
     .btn-main {
         margin-top: 0.5em;
+
+        &.dark {
+            box-shadow: 6px 6px 6px rgb(94, 94, 94);
+        }
     }
 }

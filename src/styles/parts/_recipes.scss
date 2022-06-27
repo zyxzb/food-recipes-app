@@ -1,13 +1,22 @@
 .recipes.container {
-    margin: 2em 0;
+    padding-bottom: 5em;
+
+    &.dark {
+        background-color: black;
+    }
 
     .previous-searches {
         display: block;
-        margin: 3vh 0 3vh;
+        padding: 3em 0;
+
 
         h2 {
             color: var(--text-color);
             margin-bottom: 0.5em;
+
+            &.dark {
+                color: whitesmoke;
+            }
         }
 
         .previous-searches-container {
@@ -19,10 +28,14 @@
                 margin: 0 0.8em 1.3em 0;
                 border-radius: 20px;
                 color: #fff;
-                box-shadow: 0 3px 6px var(--shadow-color);
+                box-shadow: 3px 3px 6px var(--shadow-color);
                 transform: translateX(100%);
                 opacity: 0;
                 animation: getAnimationDuration(0.5s) slideInRight forwards;
+
+                &.dark {
+                    box-shadow: 3px 3px 6px rgb(126, 126, 126);
+                }
 
             }
         }
@@ -44,6 +57,11 @@
                 border-radius: 5px 0 0 5px;
                 outline: none;
                 border: 1px solid #4d4d4d;
+
+                &.dark {
+                    background-color: #494949;
+                    color: whitesmoke;
+                }
             }
 
             .btn {
@@ -73,6 +91,10 @@
             box-shadow: 2px 5px 12px var(--shadow-color);
             position: relative;
             transition: 0.4s;
+
+            &.dark {
+                box-shadow: 2px 5px 12px whitesmoke;
+            }
 
 
             &:hover {
@@ -118,6 +140,10 @@
                     font-weight: bold;
                     color: var(--text-color);
                     margin-top: 0.2em;
+
+                    &.dark {
+                        color: whitesmoke;
+                    }
                 }
 
                 .recipe-desc {

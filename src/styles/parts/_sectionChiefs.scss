@@ -6,6 +6,10 @@
         font-size: 3em;
         margin-bottom: 1em;
 
+        &.dark {
+            color: whitesmoke;
+        }
+
         @media (max-width: 768px) {
             font-size: 1.6em;
         }
@@ -23,6 +27,11 @@
             margin-bottom: 5px;
             border-right: 4px solid var(--primary-color);
             box-shadow: 6px 6px 9px var(--shadow-color);
+
+            &.dark {
+                box-shadow: 6px 6px 9px whitesmoke;
+
+            }
 
 
             img {
@@ -46,6 +55,14 @@
             flex-direction: column;
             justify-content: space-around;
             margin-left: 12px;
+
+            .chief-card-info-name.dark {
+                color: whitesmoke;
+            }
+
+            .chief-card-info-desctription.dark {
+                color: whitesmoke;
+            }
 
             .chief-icons {
                 svg {

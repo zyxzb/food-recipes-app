@@ -1,8 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Footer = () => {
+
+    const {toggle} = useContext(ThemeContext);
+
     return (
-        <div className='footer container'>
+        <div className={ toggle ? 'footer container dark' : 'footer container'}>
             <div className="footer-section">
                 <p className='title'><a href="#!">Foodrecipes.com</a></p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa explicabo possimus ipsum, repellat enim quasi.</p>

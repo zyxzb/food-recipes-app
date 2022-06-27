@@ -1,5 +1,9 @@
 .main {
 
+    &.dark {
+        background-color: black;
+    }
+
     padding: 3vh 0;
 
     .section {
@@ -21,6 +25,10 @@
                 color: var(--text-color);
                 font-size: 3em;
                 margin-bottom: 0.3em;
+
+                &.dark {
+                    color: whitesmoke;
+                }
 
                 @media (max-width: 768px) {
                     font-size: 1.6em;

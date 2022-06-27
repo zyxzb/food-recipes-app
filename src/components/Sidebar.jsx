@@ -23,7 +23,6 @@ const Sidebar = ({links, closeSidebar}) => {
                         {link.name}
                     </Link>
                 ))}
-                
         </div>
     );
 }
