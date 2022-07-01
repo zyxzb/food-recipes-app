@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PreviousSearches from '../components/PreviousSearches';
 import RecipeCard from '../components/RecipeCard';
 import { useContext } from 'react';
@@ -54,17 +54,50 @@ const Recipes = () => {
             authorImg: "/img/top-chiefs/img_2.jpg",
 
         },
+        {
+            title: "Soup 2",
+            image: "/img/gallery/img_2.jpg",
+            authorImg: "/img/top-chiefs/img_2.jpg",
+
+        },
+        {
+            title: "Pudding 2 Elo",
+            image: "/img/gallery/img_2.jpg",
+            authorImg: "/img/top-chiefs/img_2.jpg",
+
+        },
+        {
+            title: "Lasagne 2",
+            image: "/img/gallery/img_2.jpg",
+            authorImg: "/img/top-chiefs/img_4.jpg",
+
+        },
+        {
+            title: "Lasagne 4",
+            image: "/img/gallery/img_4.jpg",
+            authorImg: "/img/top-chiefs/img_4.jpg",
+
+        },
     ];
 
     const {toggle} = useContext(ThemeContext);
+    const [searchText,
+        setSearchText] = useState('');
+
+
+
 
     return (
         <div className={toggle ? 'recipes container dark' : 'recipes container'}>
-            <PreviousSearches/>
+            <PreviousSearches setSearchText={setSearchText}/>
             <div className="recipes">
-                {recipes.map((recipe,index) => (
+
+            {/* comment map and added filter method */}
+
+                 {/* {recipes.map((recipe,index) => (
                     <RecipeCard key={index} recipe={recipe}/>
-                ))}
+                ))} */}
+                <RecipeCard recipes={recipes.filter((el) => el.title.toLowerCase().includes(searchText))}/>
             </div>
         </div>
     );

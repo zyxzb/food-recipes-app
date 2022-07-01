@@ -3,7 +3,7 @@ import React from 'react';
 const CustomImages = ({imgSrc}) => {
     return (
         <div className='custom-image'>
-            <img src={imgSrc} alt="food-img" srcset="" />
+            <img src={imgSrc} alt="food-img"/>
         </div>
     );
 }

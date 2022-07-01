@@ -4,10 +4,16 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
-const PreviousSearches = () => {
+const PreviousSearches = ({setSearchText}) => {
 
     const searches = ['pizza', 'burger', 'juice', 'soup', 'pudding', 'salad', 'lasagne', 'ice cream'];
     const {toggle} = useContext(ThemeContext);
+
+    const handleOnChange = (e) => {
+        setSearchText(e.target.value)
+        
+    }
+    
 
     return (
         <div>
@@ -23,6 +29,7 @@ const PreviousSearches = () => {
                     className={toggle && 'dark'}
                     type="text"
                     placeholder='Search...'
+                    onChange={handleOnChange}
                      />
                      <button className='btn'><FontAwesomeIcon icon={faSearch}/></button>
                 </div>

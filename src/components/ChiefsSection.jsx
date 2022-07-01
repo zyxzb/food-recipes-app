@@ -52,7 +52,7 @@ const ChiefsSection = () => {
             <h2 className={ toggle ? 'title dark' : 'title'}>Chiefs Sections</h2>
             <div className='top-chiefs-container'>
                 {chiefs.map((chief, index) => (
-                   <div className={toggle ? 'chief-card dark' : 'chief-card'}key={index} >
+                   <div className={toggle ? 'chief-card dark' : 'chief-card'} key={index} >
                     <div className='chief-card-image'>
                         <img src={chief.img} alt=""/>
                     </div>

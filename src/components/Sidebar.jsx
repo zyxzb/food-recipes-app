@@ -17,7 +17,6 @@ const Sidebar = ({links, closeSidebar}) => {
                         key={link.path} 
                         onClick={closeSidebar}
                         className={location.pathname === link.path ? 'sidebar-link active' : 'sidebar-link'}
-                        // className='sidebar-link'
                         >
                         <FontAwesomeIcon icon={link.icon} />
                         {link.name}
