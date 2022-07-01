@@ -92,7 +92,7 @@ const Recipes = () => {
             <PreviousSearches setSearchText={setSearchText}/>
             <div className="recipes">
 
-            {/* comment map and added filter method */}
+            {/* disabled map and added filter method */}
 
                  {/* {recipes.map((recipe,index) => (
                     <RecipeCard key={index} recipe={recipe}/>
