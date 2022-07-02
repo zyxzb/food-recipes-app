@@ -18,7 +18,7 @@ const {toggle} = useContext(ThemeContext);
     return (
         <>
             <div className="col pr">
-                <img src="/img/gallery/img_10.jpg" alt="" srcset="" />
+                <img src="./img/gallery/img_10.jpg" alt="food-img" srcset="" />
             </div>
             <div className="col">
                     <h2 className={toggle ? 'title dark' : 'title'}> Section 1</h2>
