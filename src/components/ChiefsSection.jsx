@@ -4,42 +4,53 @@ import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
+//images
+
+import img12 from '../img/top-chiefs/img_1.jpg';
+import img13 from '../img/top-chiefs/img_2.jpg';
+import img14 from '../img/top-chiefs/img_3.jpg';
+import img15 from '../img/top-chiefs/img_4.jpg';
+import img16 from '../img/top-chiefs/img_5.jpg';
+import img17 from '../img/top-chiefs/img_6.jpg';
+
+
+
 const ChiefsSection = () => {
 
     const chiefs = [
         {
             name: "Chief Name",
-            img: "/img/top-chiefs/img_1.jpg",
+            img: img12,
             recipes: "10",
             cuisine: "Mexican",
          },
         {
             name: "Chief Name",
-            img: "/img/top-chiefs/img_2.jpg",
+            img: img13,
             recipes: "11",
             cuisine: "Mexican",
          },
         {
             name: "Chief Name",
-            img: "/img/top-chiefs/img_3.jpg",
+            img: img14,
             recipes: "9",
             cuisine: "Mexican",
          },
         {
             name: "Chief Name",
-            img: "/img/top-chiefs/img_4.jpg",
+            img: img15,
             recipes: "14",
             cuisine: "Mexican",
          },
         {
             name: "Chief Name",
-            img: "/img/top-chiefs/img_5.jpg",
+            img: img16,
             recipes: "21",
             cuisine: "Mexican",
          },
         {
             name: "Chief Name",
-            img: "/img/top-chiefs/img_6.jpg",
+            img: img17,
             recipes: "10",
             cuisine: "Mexican",
          },

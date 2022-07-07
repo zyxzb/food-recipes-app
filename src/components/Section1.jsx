@@ -2,6 +2,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
+import img10 from '../img/gallery/img_10.jpg';
+
 const Section1 = () => {
 
     const list = [
@@ -18,7 +20,7 @@ const {toggle} = useContext(ThemeContext);
     return (
         <>
             <div className="col pr">
-                <img src="./img/gallery/img_10.jpg" alt="food-img" srcset="" />
+                <img src={img10} alt="food-img" srcset="" />
             </div>
             <div className="col">
                     <h2 className={toggle ? 'title dark' : 'title'}> Section 1</h2>

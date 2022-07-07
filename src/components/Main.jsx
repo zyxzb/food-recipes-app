@@ -6,21 +6,31 @@ import ChiefsSection from './ChiefsSection';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
+//images
+import img1 from '../img/gallery/img_1.jpg';
+import img2 from '../img/gallery/img_2.jpg';
+import img3 from '../img/gallery/img_3.jpg';
+import img4 from '../img/gallery/img_4.jpg';
+import img5 from '../img/gallery/img_5.jpg';
+import img6 from '../img/gallery/img_6.jpg';
+import img7 from '../img/gallery/img_7.jpg';
+import img8 from '../img/gallery/img_8.jpg';
+import img9 from '../img/gallery/img_9.jpg';
 
 const Main = () => {
 
-
     const images = [
-
-        "/img/gallery/img_1.jpg",
-        "/img/gallery/img_2.jpg",
-        "/img/gallery/img_3.jpg",
-        "/img/gallery/img_4.jpg",
-        "/img/gallery/img_5.jpg",
-        "/img/gallery/img_6.jpg",
-        "/img/gallery/img_7.jpg",
-        "/img/gallery/img_8.jpg",
-        "/img/gallery/img_9.jpg",
+        
+        img1,
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7,
+        img8,
+        img9,
+       
     ];
     
     const {toggle} = useContext(ThemeContext);
